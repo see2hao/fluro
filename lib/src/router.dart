@@ -14,6 +14,7 @@ import 'package:fluro/src/common.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 class Router {
   static final appRouter = Router();
@@ -128,7 +129,7 @@ class Router {
           transition == TransitionType.nativeModal);
       if (isNativeTransition) {
         if (Theme.of(buildContext).platform == TargetPlatform.iOS) {
-          return CupertinoPageRoute<dynamic>(
+          return MaterialWithModalsPageRoute<dynamic>(
               settings: routeSettings,
               fullscreenDialog: transition == TransitionType.nativeModal,
               builder: (BuildContext context) {
